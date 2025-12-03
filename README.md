@@ -192,7 +192,7 @@ For detailed results, refer to the **Final Project Report** in the `Documentatio
 
 ## License
 
-This project is for educational purposes as part of STATS 507 coursework.
+This project is for educational purposes as part of DATASCI 507 : Data Analytics using Python coursework.
 
 ---
 
