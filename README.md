@@ -279,6 +279,28 @@ score(q, r) = α·content_similarity + β·genre_similarity + γ·cluster_bonus
 7. **True Crime & Crime Journalism** (468 books)
 8. **Historical Mysteries** (485 books)
 
+### Evaluation Visualizations
+
+#### Dataset Genre Distribution
+![Top Genres](graphs/top_genres_mt.png)
+*Distribution of the most common genres in the Mystery & Thriller dataset, showing the diversity of sub-genres from classic detective fiction to psychological thrillers and horror.*
+
+#### PCA Dimensionality Reduction
+![PCA Explained Variance](graphs/pca_explained_variance.png)
+*Cumulative explained variance showing that 255 principal components capture 95% of the variance in the 768-dimensional MPNet embeddings, demonstrating effective dimensionality reduction while preserving semantic information.*
+
+#### UMAP Cluster Visualization
+![UMAP K-Means Clusters](graphs/umap_kmeans_clusters.png)
+*2D UMAP projection of book embeddings colored by K-Means cluster assignments. The visualization reveals clear separation between sub-genres: horror/supernatural mysteries (purple), literary mysteries (teal), romantic suspense (burgundy), and police procedurals (blue) form distinct regions in the embedding space.*
+
+#### Hyperparameter Optimization
+![Weight Parameter Sweep](graphs/weight_parameter_sweep.png)
+*Grid search results showing how different combinations of content weight (α), genre weight (β), and cluster weight (γ) affect recommendation quality metrics. The optimal configuration (α=0.5, β=0.4, γ=0.1) balances diversity, genre precision, and within-cluster coherence.*
+
+#### Cluster Transition Analysis
+![Cluster Transition Matrix](graphs/cluster_transition_matrix.png)
+*Heat map showing cross-cluster recommendation patterns. Diagonal elements represent within-cluster recommendations (high values indicate strong cluster coherence), while off-diagonal elements reveal natural transitions between related sub-genres. For example, Literary & British Mysteries (Cluster 3) frequently recommend to Police Procedurals (Cluster 2), reflecting thematic overlap.*
+
 ### Baseline Comparison
 
 | System | Diversity | Genre Precision | Coverage | Within-Cluster |
