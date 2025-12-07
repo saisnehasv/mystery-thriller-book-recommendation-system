@@ -32,7 +32,7 @@ This project presents a **cluster-aware hybrid recommendation system** specifica
 mystery-thriller-book-recommendation-system/
 │
 │
-├── notebook-1-data-cleaning.ipynb          # Data preprocessing & EDA
+├── notebook-1-data-processing.ipynb        # Data preprocessing & EDA
 ├── notebook-2-embeddings.ipynb             # Embedding generation & clustering
 ├── notebook-3-recommender.ipynb            # Hybrid system & evaluation
 ├── notebook-4-gradio-app.ipynb             # Interactive web application
@@ -102,7 +102,7 @@ Run notebooks sequentially:
 
 ```bash
 # Step 1: Data preprocessing & EDA (~20 min)
-jupyter notebook notebooks/notebook-1-data-cleaning.ipynb
+jupyter notebook notebooks/notebook-1-data-processing.ipynb
 
 # Step 2: Generate embeddings & clustering (~40 min with GPU, ~2 hrs CPU)
 jupyter notebook notebooks/notebook-2-embeddings.ipynb
@@ -273,13 +273,13 @@ This is an academic project completed for STATS 507 at the University of Michiga
 **Sai Sneha Siddapura Venkataramappa**  
 Department of Statistics, University of Michigan  
 📧 saisneha@umich.edu  
-🔗 [Linked-In](https://www.linkedin.com/in/sai-sneha-sv/)
+🔗 [LinkedIn](https://www.linkedin.com/in/sai-sneha-sv/)
 
 ---
 
 ## 🙏 Acknowledgments
 
-- **Course:** STATS 507 instructors for guidance on ML methodology
+- **Course:** DATASCI 507 instructors for guidance on ML methodology
 - **Tools:** Hugging Face (sentence-transformers), scikit-learn, Gradio
 - **Dataset:** Goodreads 100k dataset via Hugging Face Datasets
 - **Compute:** Google Colab for GPU access during development
