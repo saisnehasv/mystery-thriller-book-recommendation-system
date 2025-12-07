@@ -11,18 +11,20 @@
 This project presents a **cluster-aware hybrid recommendation system** specifically designed for mystery and thriller books. By combining content-based embeddings, genre similarity, and sub-genre clustering, the system delivers personalized book recommendations that balance relevance with discovery.
 
 ### Key Features
-- **Hybrid scoring algorithm** combining three signals: semantic embeddings (α), genre overlap (β), and cluster membership (γ)
-- **9 distinct sub-genres** identified through K-Means clustering (Psychological Thrillers, Horror, Police Procedurals, etc.)
-- **Three recommendation modes**: Similar (within-cluster), Explore (balanced), Discover (cross-cluster)
-- **Interactive Gradio web app** with fuzzy search, live cover images, and explainability features
-- **Statistically validated** with p=0.013 improvement over baselines
+
+* **Hybrid scoring algorithm** combining three signals: semantic embeddings (α), genre overlap (β), and cluster membership (γ)
+* **9 distinct sub-genres** identified through K-Means clustering (Psychological Thrillers, Horror, Police Procedurals, etc.)
+* **Three recommendation modes**: Similar (within-cluster), Explore (balanced), Discover (cross-cluster)
+* **Interactive Gradio web app** with fuzzy search, live cover images, and explainability features
+* **Statistically validated** with p=0.013 improvement over baselines
 
 ### Performance Metrics
-- **Genre Precision:** 76.9%
-- **Diversity Score:** 0.479
-- **Within-Cluster Rate:** 91.9%
-- **F1-Score:** 0.732
-- **Hit Rate:** 95.0%
+
+* **Genre Precision:** 76.9%
+* **Diversity Score:** 0.479
+* **Within-Cluster Rate:** 91.9%
+* **F1-Score:** 0.732
+* **Hit Rate:** 95.0%
 
 ---
 
@@ -67,15 +69,103 @@ mystery-thriller-book-recommendation-system/
 
 ---
 
-##  Quick Start
+## 🎨 Gradio App Screenshots
+
+**Don't want to run the code?** Here's a complete visual walkthrough of the interactive recommendation system!
+
+### 1. Main Search Interface
+
+![Main Interface](screenshots/image1_main_interface.png)
+*The gothic-themed search interface with dark background and copper accents. Features include: book title search with fuzzy matching, three recommendation modes (Similar/Explore/Discover), collapsible Advanced Configuration panel, Example Searches section, and Quick Start guide on the right.*
+
+### 2. Search Results with Book Match
+
+![Search Results](screenshots/image2_search_results.png)
+*Fuzzy search successfully finds "Hercule Poirot's Christmas" by Agatha Christie with 68.29% match confidence. The system identifies it as Cluster 0: Domestic & Psychological Thrillers. The input book card displays the cover, rating (3.97), cluster information, and full genre tags.*
+
+### 3. Top 10 Recommendations Table
+
+![Recommendations Table](screenshots/image3_recommendations.png)
+*Top 10 recommendations displayed in a structured table showing: Rank, Cover image, Title & Author, Cluster badge (with cross-cluster indicators), Book description excerpt, and detailed Scores breakdown (Content, Genre, Cluster, Total). Example: "Elephants Can Remember" scores 0.607 total with Content=0.562, Genre=0.769, Cluster=0.0 (cross-cluster).*
+
+### 4. System Statistics Dashboard
+
+![System Stats](screenshots/image4_system_stats.png)
+*The System Statistics tab shows key performance metrics:*
+- *Total Books: 7,772 Mystery & Thriller titles*
+- *Clusters: 9 distinct sub-genres*
+- *Model: MPNet (Sentence Transformer)*
+- *Diversity Score: 0.479*
+- *Genre Precision: 76.9%*
+- *Within-Cluster Rate: 91.9%*
+
+*Includes explanations of what each metric means for recommendation quality.*
+
+### 5. The 9 Clusters Visualization
+
+![Cluster Overview](screenshots/image5_clusters.png)
+*Visual representation of all 9 sub-genre clusters with color-coded bars:*
+- *0. Domestic & Psychological Thrillers (brown)*
+- *1. Horror & Supernatural Mysteries (purple)*
+- *2. Police Procedurals & Detective Fiction (blue)*
+- *3. Literary & British Mysteries (teal)*
+- *4. Comics & Graphic Novels (orange)*
+- *5. Romantic Suspense (burgundy)*
+- *6. Espionage & Military Thrillers (dark blue)*
+- *7. True Crime & Crime Journalism (red)*
+- *8. Historical Mysteries (brown)*
+
+### 6. About Section - How It Works
+
+![How It Works](screenshots/image6_about.png)
+*Explanation of the hybrid algorithm combining three signals:*
+1. *Content Similarity (α): AI embeddings capture plot, themes, and writing style*
+2. *Genre Matching (β): Compares genre tags using Jaccard similarity*
+3. *Cluster Bonus (γ): Leverages sub-genre groupings from K-means clustering*
+
+*Shows the final scoring formula and explains the three recommendation modes with their different weight configurations.*
+
+### 7. Example Sherlock Holmes Query
+
+![Example Query](screenshots/image7_example.png)
+*Pre-filled example using "The Shining, Sherlock Holmes, Death on the Nile..." showing how users can quickly test the system. The Quick Start panel guides users through the three-step process.*
+
+### 8. Advanced Configuration Panel
+
+![Advanced Settings](screenshots/image8_advanced.png)
+*Power users can fine-tune recommendations with sliders for:*
+- *Content Weight (α): 0.5 (controls semantic similarity importance)*
+- *Genre Weight (β): 0.3 (controls genre matching importance)*
+- *Cluster Weight (γ): 0.2 (controls within-cluster bonus)*
+- *Number of Recommendations: 10 (range 3-20)*
+- *Search Threshold: 50 (fuzzy matching tolerance, 40-90)*
+
+*Note: "Applies in Explore mode" indicates these custom weights are used when Explore mode is selected.*
+
+### 9. Example Searches Reference Table
+
+![Example Searches](screenshots/image9_examples.png)
+*Pre-configured example queries demonstrating different use cases:*
+- *Death on the Nile → Similar (Within Cluster) mode*
+- *Sherlock Holmes → Discover (Cross-Cluster) mode*
+- *The Girl with the Dragon Tattoo → Explore (Balanced) mode*
+- *The Shining → Similar (Within Cluster) mode*
+
+*The user can click on any of these examples to perform a quick search. Each example shows the recommended mode and custom weight configurations for optimal results.*
+
+---
+
+## Quick Start
 
 ### 1. Clone Repository
+
 ```bash
 git clone https://github.com/saisnehasv/mystery-thriller-book-recommendation-system.git
 cd mystery-thriller-book-recommendation-system
 ```
 
 ### 2. Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
@@ -83,10 +173,11 @@ pip install -r requirements.txt
 ### 3. Choose Your Path
 
 #### Option A: Just Try the App (5 minutes) ⚡
+
 **For quick demo - uses pre-computed checkpoints**
 
 ```bash
-jupyter notebook notebooks/notebook-4-gradio-app.ipynb
+jupyter notebook notebook-4-gradio-app.ipynb
 ```
 
 The Gradio interface will launch automatically at a public Gradio link.
@@ -96,22 +187,23 @@ The Gradio interface will launch automatically at a public Gradio link.
 ---
 
 #### Option B: Full Pipeline from Scratch (2-3 hours) 🔬
+
 **For complete reproducibility - regenerates everything**
 
 Run notebooks sequentially:
 
 ```bash
 # Step 1: Data preprocessing & EDA (~20 min)
-jupyter notebook notebooks/notebook-1-data-processing.ipynb
+jupyter notebook notebook-1-data-processing.ipynb
 
 # Step 2: Generate embeddings & clustering (~40 min with GPU, ~2 hrs CPU)
-jupyter notebook notebooks/notebook-2-embeddings.ipynb
+jupyter notebook notebook-2-embeddings.ipynb
 
 # Step 3: Build recommender & evaluate (~30 min)
-jupyter notebook notebooks/notebook-3-recommender.ipynb
+jupyter notebook notebook-3-recommender.ipynb
 
 # Step 4: Launch Gradio app (~5 min)
-jupyter notebook notebooks/notebook-4-gradio-app.ipynb
+jupyter notebook notebook-4-gradio-app.ipynb
 ```
 
 **Note:** Notebooks save checkpoints after each stage, so you can resume if interrupted.
@@ -123,47 +215,55 @@ jupyter notebook notebooks/notebook-4-gradio-app.ipynb
 **Source:** [Goodreads 100k Dataset](https://huggingface.co/datasets/euclaise/goodreads_100k)
 
 **Processing Pipeline:**
+
 1. Filtered for "Mystery" and "Thriller" genres (9,088 initial books)
 2. Language detection (retained English-only: 7,772 books)
 3. Quality filtering (min 50 chars description, min 10 ratings)
 4. Train-test split: 80/20 (6,217 train, 1,555 test)
 
 **Final Dataset Statistics:**
-- **Total Books:** 7,772 mystery/thriller titles
-- **Unique Genres:** 751 genre tags
-- **Avg Rating:** 3.86 ± 0.62
-- **Median Description Length:** 811 characters
+
+* **Total Books:** 7,772 mystery/thriller titles
+* **Unique Genres:** 751 genre tags
+* **Avg Rating:** 3.86 ± 0.62
+* **Median Description Length:** 811 characters
 
 ---
 
 ## 🧠 Methodology
 
 ### 1. Embedding Generation
-- **Model Comparison:** MiniLM (384-dim) vs. MPNet (768-dim)
-- **Selected:** MPNet for superior semantic coherence (0.578 vs. 0.515 avg similarity)
-- **Optimization:** GPU-accelerated with FP16 precision (122 texts/sec on Tesla T4)
+
+* **Model Comparison:** MiniLM (384-dim) vs. MPNet (768-dim)
+* **Selected:** MPNet for superior semantic coherence (0.578 vs. 0.515 avg similarity)
+* **Optimization:** GPU-accelerated with FP16 precision (122 texts/sec on Tesla T4)
 
 ### 2. Dimensionality Reduction
-- **PCA:** 255 components (95% variance explained)
-- **UMAP:** 2D projection for visualization (n_neighbors=15, min_dist=0.0)
+
+* **PCA:** 255 components (95% variance explained)
+* **UMAP:** 2D projection for visualization (n_neighbors=15, min_dist=0.0)
 
 ### 3. Clustering
-- **Algorithm Comparison:** K-Means vs. HDBSCAN
-- **Selected:** K-Means (K=9) for balanced, interpretable clusters
-- **Rationale:** HDBSCAN produced 93% mega-cluster due to semantic homogeneity
+
+* **Algorithm Comparison:** K-Means vs. HDBSCAN
+* **Selected:** K-Means (K=9) for balanced, interpretable clusters
+* **Rationale:** HDBSCAN produced 93% mega-cluster due to semantic homogeneity
 
 ### 4. Hybrid Scoring Function
+
 ```
 score(q, r) = α·content_similarity + β·genre_similarity + γ·cluster_bonus
 ```
-- **Default weights:** α=0.5, β=0.4, γ=0.1
-- **Content similarity:** Cosine similarity on MPNet embeddings
-- **Genre similarity:** Jaccard index on multi-label genre vectors
-- **Cluster bonus:** Binary indicator (1 if same cluster, 0 otherwise)
+
+* **Default weights:** α=0.5, β=0.4, γ=0.1
+* **Content similarity:** Cosine similarity on MPNet embeddings
+* **Genre similarity:** Jaccard index on multi-label genre vectors
+* **Cluster bonus:** Binary indicator (1 if same cluster, 0 otherwise)
 
 ### 5. Recommendation Modes
+
 | Mode | α | β | γ | Strategy |
-|------|---|---|---|----------|
+| --- | --- | --- | --- | --- |
 | **Similar** | 0.4 | 0.2 | 0.4 | Within-cluster only |
 | **Explore** | 0.5 | 0.4 | 0.1 | 70% within + 30% cross |
 | **Discover** | 0.5 | 0.4 | 0.1 | Prioritize cross-cluster |
@@ -173,6 +273,7 @@ score(q, r) = α·content_similarity + β·genre_similarity + γ·cluster_bonus
 ## 📈 Results
 
 ### Cluster Sub-genres Identified
+
 0. **Domestic & Psychological Thrillers** (1,226 books)
 1. **Horror & Supernatural Mysteries** (517 books)
 2. **Police Procedurals & Detective Fiction** (703 books)
@@ -186,7 +287,7 @@ score(q, r) = α·content_similarity + β·genre_similarity + γ·cluster_bonus
 ### Baseline Comparison
 
 | System | Diversity | Genre Precision | Coverage | Within-Cluster |
-|--------|-----------|----------------|----------|----------------|
+| --- | --- | --- | --- | --- |
 | Random | 0.714 | 0.245 | 0.001 | — |
 | Content-Only | 0.438 | 0.485 | 0.135 | 0.733 |
 | Genre-Only | 0.578 | 0.818 | 0.142 | 0.532 |
@@ -197,43 +298,30 @@ score(q, r) = α·content_similarity + β·genre_similarity + γ·cluster_bonus
 
 ---
 
-## 🎨 Interactive Application
-
-The Gradio web app features:
-- **Gothic-themed UI** matching mystery/thriller aesthetics
-- **Fuzzy search** with RapidFuzz (handles typos, threshold=50)
-- **Live book covers** via Google Books API
-- **Explainability** showing content/genre/cluster similarity scores
-- **Parameter customization** for advanced users
-
-**Demo Query:**
-```
-Input: "Hercule Poirot's Christmas"
-Mode: Explore (Balanced)
-Results: 7 Agatha Christie classics + 3 similar British mysteries
-```
-
----
-
 ## 🔬 Reproducibility
 
 ### Checkpoints
+
 The repository includes checkpointed data at key stages:
+
 1. **checkpoint_1_data_prepared.pkl** – Cleaned train/test data
 2. **checkpoint_2_embeddings.pkl** – MPNet embeddings + cluster assignments
 3. **checkpoint_3_evaluation.pkl** – Evaluation metrics + results
 
 ### Random Seeds
+
 All random operations use seed=42 for reproducibility:
+
 ```python
 np.random.seed(42)
 torch.manual_seed(42)
 ```
 
 ### System Requirements
-- **GPU:** NVIDIA Tesla T4 or equivalent (optional, but recommended)
-- **RAM:** 16GB minimum (32GB recommended for full dataset)
-- **Storage:** ~5GB for embeddings and checkpoints
+
+* **GPU:** NVIDIA Tesla T4 or equivalent (optional, but recommended)
+* **RAM:** 16GB minimum (32GB recommended for full dataset)
+* **Storage:** ~5GB for embeddings and checkpoints
 
 ---
 
@@ -272,17 +360,17 @@ This is an academic project completed for STATS 507 at the University of Michiga
 
 **Sai Sneha Siddapura Venkataramappa**  
 Department of Statistics, University of Michigan  
-📧 saisneha@umich.edu  
+📧 [saisneha@umich.edu](mailto:saisneha@umich.edu)  
 🔗 [LinkedIn](https://www.linkedin.com/in/sai-sneha-sv/)
 
 ---
 
 ## 🙏 Acknowledgments
 
-- **Course:** DATASCI 507 instructors for guidance on ML methodology
-- **Tools:** Hugging Face (sentence-transformers), scikit-learn, Gradio
-- **Dataset:** Goodreads 100k dataset via Hugging Face Datasets
-- **Compute:** Google Colab for GPU access during development
+* **Course:** DATASCI 507 instructors for guidance on ML methodology
+* **Tools:** Hugging Face (sentence-transformers), scikit-learn, Gradio
+* **Dataset:** Goodreads 100k dataset via Hugging Face Datasets
+* **Compute:** Google Colab for GPU access during development
 
 ---
 
