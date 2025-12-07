@@ -26,7 +26,7 @@ This project presents a **cluster-aware hybrid recommendation system** specifica
 
 ---
 
-## Repository Structure
+## 🗂️ Repository Structure
 
 ```
 mystery-thriller-book-recommendation-system/
@@ -47,8 +47,11 @@ mystery-thriller-book-recommendation-system/
 │   │   ├── train_embeddings.npy
 │   │   └── test_embeddings.npy
 │   └── mpnet/
-│       ├── train_embeddings.npy
-│       └── test_embeddings.npy
+│   │   ├── train_embeddings.npy
+│   │   └── test_embeddings.npy
+│   │ 
+│   ├── umap_coords.npy
+│   ├── umap_sample_indices.npy
 │
 ├── graphs/                                  # Visualizations
 │   ├── top_genres_mt.png
@@ -115,7 +118,7 @@ jupyter notebook notebooks/notebook-4-gradio-app.ipynb
 
 ---
 
-## Dataset
+## 📊 Dataset
 
 **Source:** [Goodreads 100k Dataset](https://huggingface.co/datasets/euclaise/goodreads_100k)
 
@@ -133,7 +136,7 @@ jupyter notebook notebooks/notebook-4-gradio-app.ipynb
 
 ---
 
-## Methodology
+## 🧠 Methodology
 
 ### 1. Embedding Generation
 - **Model Comparison:** MiniLM (384-dim) vs. MPNet (768-dim)
@@ -167,7 +170,7 @@ score(q, r) = α·content_similarity + β·genre_similarity + γ·cluster_bonus
 
 ---
 
-## Results
+## 📈 Results
 
 ### Cluster Sub-genres Identified
 0. **Domestic & Psychological Thrillers** (1,226 books)
@@ -239,11 +242,11 @@ torch.manual_seed(42)
 If you use this work, please cite:
 
 ```bibtex
-@inproceedings{venkataramappa2024cluster,
+@inproceedings{venkataramappa2025cluster,
   title={Cluster-Aware Hybrid Recommendation System for Mystery and Thriller Books},
   author={Venkataramappa, Sai Sneha Siddapura},
   booktitle={STATS 507 Final Project},
-  year={2024},
+  year={2025},
   institution={University of Michigan}
 }
 ```
@@ -270,17 +273,11 @@ This is an academic project completed for STATS 507 at the University of Michiga
 **Sai Sneha Siddapura Venkataramappa**  
 Department of Statistics, University of Michigan  
 📧 saisneha@umich.edu  
-🔗 [GitHub](https://github.com/saisnehasv)
+🔗 [Linked-In](https://www.linkedin.com/in/sai-sneha-sv/)
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## Acknowledgments
+## 🙏 Acknowledgments
 
 - **Course:** STATS 507 instructors for guidance on ML methodology
 - **Tools:** Hugging Face (sentence-transformers), scikit-learn, Gradio
@@ -289,4 +286,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**If you find this project useful, please consider starring the repository!**
+**⭐ If you find this project useful, please consider starring the repository!**
