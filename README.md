@@ -76,12 +76,12 @@ mystery-thriller-book-recommendation-system/
 ### 1. Main Search Interface
 
 ![Main Interface](screenshots/image1_main_interface.png)
-*The gothic-themed search interface with dark background and copper accents. Features include: book title search with fuzzy matching, three recommendation modes (Similar/Explore/Discover), collapsible Advanced Configuration panel, Example Searches section, and Quick Start guide on the right.*
+*The mystery-themed search interface. Features include: book title search with fuzzy matching, three recommendation modes (Similar/Explore/Discover), collapsible Advanced Configuration panel, Example Searches section, and Quick Start guide on the right.*
 
 ### 2. Search Results with Book Match
 
 ![Search Results](screenshots/image2_search_results.png)
-*Fuzzy search successfully finds "Hercule Poirot's Christmas" by Agatha Christie with 68.29% match confidence. The system identifies it as Cluster 0: Domestic & Psychological Thrillers. The input book card displays the cover, rating (3.97), cluster information, and full genre tags.*
+*Fuzzy search successfully finds "Hercule Poirot's Christmas" with the input "Hercule Poiroit" by Agatha Christie with 68.29% match confidence. The system identifies it as Cluster 0: Domestic & Psychological Thrillers. The input book card displays the cover, rating (3.97), cluster information, and full genre tags.*
 
 ### 3. Top 10 Recommendations Table
 
@@ -125,12 +125,7 @@ mystery-thriller-book-recommendation-system/
 
 *Shows the final scoring formula and explains the three recommendation modes with their different weight configurations.*
 
-### 7. Example Sherlock Holmes Query
-
-![Example Query](screenshots/image7_example.png)
-*Pre-filled example using "The Shining, Sherlock Holmes, Death on the Nile..." showing how users can quickly test the system. The Quick Start panel guides users through the three-step process.*
-
-### 8. Advanced Configuration Panel
+### 7. Advanced Configuration Panel
 
 ![Advanced Settings](screenshots/image8_advanced.png)
 *Power users can fine-tune recommendations with sliders for:*
@@ -142,7 +137,7 @@ mystery-thriller-book-recommendation-system/
 
 *Note: "Applies in Explore mode" indicates these custom weights are used when Explore mode is selected.*
 
-### 9. Example Searches Reference Table
+### 8. Example Searches Reference Table
 
 ![Example Searches](screenshots/image9_examples.png)
 *Pre-configured example queries demonstrating different use cases:*
