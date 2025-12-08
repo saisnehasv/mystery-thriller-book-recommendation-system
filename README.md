@@ -62,9 +62,11 @@ mystery-thriller-book-recommendation-system/
 │   ├── weight_parameter_sweep.png
 │   └── cluster_transition_matrix.png
 │
+│── documentation/ 
+│    └── paper.pdf                           # IEEE project report
 ├── requirements.txt                         # Python dependencies
 ├── README.md                                # This file
-└── paper.pdf                                # IEEE project report
+
 ```
 
 ---
