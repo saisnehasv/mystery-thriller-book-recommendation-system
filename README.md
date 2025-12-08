@@ -43,6 +43,10 @@ mystery-thriller-book-recommendation-system/
 │   ├── checkpoint_1_data_prepared.pkl
 │   ├── checkpoint_2_embeddings.pkl
 │   └── checkpoint_3_evaluation.pkl
+│   └── df_mt-2.pkl
+│   └── df_test-2.pkl
+│   └── df_train-2.pkl
+│   └── metadata-2.pkl
 │
 ├── embeddings/                             # Pre-computed embeddings
 │   ├── miniLM/
